@@ -202,6 +202,7 @@ type PagerdutyConfig struct {
 	Description string            `yaml:"description,omitempty" json:"description,omitempty"`
 	Details     map[string]string `yaml:"details,omitempty" json:"details,omitempty"`
 	Severity    string            `yaml:"severity,omitempty" json:"severity,omitempty"`
+	Priority    string            `yaml:"priority,omitempty" json:"priority,omitempty"`
 	Class       string            `yaml:"class,omitempty" json:"class,omitempty"`
 	Component   string            `yaml:"component,omitempty" json:"component,omitempty"`
 	Group       string            `yaml:"group,omitempty" json:"group,omitempty"`
