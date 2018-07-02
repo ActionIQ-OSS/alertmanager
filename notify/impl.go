@@ -443,7 +443,7 @@ type pagerDutyPayload struct {
 	Summary       string            `json:"summary"`
 	Source        string            `json:"source"`
 	Severity      string            `json:"severity"`
-	Priority      string            `json:"priority,omitempty"`
+	Priority      string            `json:"priority"`
 	Timestamp     string            `json:"timestamp,omitempty"`
 	Class         string            `json:"class,omitempty"`
 	Component     string            `json:"component,omitempty"`
