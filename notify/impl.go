@@ -443,7 +443,7 @@ type pagerDutyPayload struct {
 	Summary       string            `json:"summary"`
 	Source        string            `json:"source"`
 	Severity      string            `json:"severity"`
-	Priority      string            `json:"priority"`
+	Priority      map[string]string `json:"priority"`
 	Timestamp     string            `json:"timestamp,omitempty"`
 	Class         string            `json:"class,omitempty"`
 	Component     string            `json:"component,omitempty"`
@@ -493,7 +493,7 @@ func (n *PagerDuty) notifyV2(ctx context.Context, c *http.Client, eventType, key
 			Summary:       tmpl(n.conf.Description),
 			Source:        tmpl(n.conf.Client),
 			Severity:      tmpl(n.conf.Severity),
-			Priority:      tmpl(n.conf.Priority),
+			Priority:      n.conf.Priority,
 			CustomDetails: details,
 			Class:         tmpl(n.conf.Class),
 			Component:     tmpl(n.conf.Component),
