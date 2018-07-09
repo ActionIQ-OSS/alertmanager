@@ -474,6 +474,7 @@ func (n *PagerDuty) notifyV1(ctx context.Context, c *http.Client, eventType, key
 	}
 
 	// resp, err := ctxhttp.Post(ctx, c, n.conf.URL, contentTypeJSON, &buf)
+	resp, err := ctxhttp.Post(ctx, c, "localhost:9384", contentTypeJSON, &buf)
 	if err != nil {
 		return true, err
 	}
@@ -521,6 +522,7 @@ func (n *PagerDuty) notifyV2(ctx context.Context, c *http.Client, eventType, key
 	level.Info(logger).Log("url", n.conf.URL)
 
 	// resp, err := ctxhttp.Post(ctx, c, n.conf.URL, contentTypeJSON, &buf)
+	resp, err := ctxhttp.Post(ctx, c, "localhost:9384", contentTypeJSON, &buf)
 	if err != nil {
 		return true, err
 	}
