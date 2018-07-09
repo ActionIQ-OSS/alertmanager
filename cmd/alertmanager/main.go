@@ -308,6 +308,7 @@ func main() {
 
 	var hash float64
 	reload := func() (err error) {
+		level.Info(logger).Log("msg", "sanity")
 		level.Info(logger).Log("msg", "Loading configuration file", "file", *configFile)
 		defer func() {
 			if err != nil {
