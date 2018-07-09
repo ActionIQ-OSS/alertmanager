@@ -472,8 +472,9 @@ func (n *PagerDuty) notifyV1(ctx context.Context, c *http.Client, eventType, key
 	if err := json.NewEncoder(&buf).Encode(msg); err != nil {
 		return false, err
 	}
-
-	level.Info(n.logger).Log("v1 url", n.conf.URL)
+	
+	logger := promlog.New(*logLevel)
+	level.Info(logger).Log("v1 url", n.conf.URL)
 
 	// resp, err := ctxhttp.Post(ctx, c, n.conf.URL, contentTypeJSON, &buf)
 	resp, err := ctxhttp.Post(ctx, c, "localhost:9384", contentTypeJSON, &buf)
@@ -521,7 +522,8 @@ func (n *PagerDuty) notifyV2(ctx context.Context, c *http.Client, eventType, key
 		return false, err
 	}
 
-	level.Info(n.logger).Log("v2 url", n.conf.URL)
+	logger := promlog.New(*logLevel)
+	level.Info(logger).Log("v2 url", n.conf.URL)
 
 	// resp, err := ctxhttp.Post(ctx, c, n.conf.URL, contentTypeJSON, &buf)
 	resp, err := ctxhttp.Post(ctx, c, "localhost:9384", contentTypeJSON, &buf)

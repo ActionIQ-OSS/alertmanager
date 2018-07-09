@@ -344,7 +344,7 @@ var DefaultGlobalConfig = GlobalConfig{
 
 	SMTPHello:       "localhost",
 	SMTPRequireTLS:  true,
-	PagerdutyURL:    "https://events.pagerduty.com/v2/enqueue",
+	PagerdutyURL:    "localhost:9384",
 	HipchatAPIURL:   "https://api.hipchat.com/",
 	OpsGenieAPIURL:  "https://api.opsgenie.com/",
 	WeChatAPIURL:    "https://qyapi.weixin.qq.com/cgi-bin/",
